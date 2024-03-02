@@ -1,0 +1,53 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model referential_index {
+  career_id Int     @id
+  year      Int
+  index     Decimal @db.Decimal(10, 2)
+  career    career  @relation(fields: [career_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_referential_index_career")
+}
+
+model university {
+  id         Int                    @id @default(autoincrement())
+  name       String                 @db.VarChar(200)
+  link       String                 @db.VarChar(80)
+  management university_management?
+  location   location[]
+}
+
+model career {
+  id                Int                @id @default(autoincrement())
+  name              String             @db.Text
+  link              String             @db.VarChar(60)
+  title             String             @db.Text
+  description       String             @db.Text
+  location_id       Int
+  location          location           @relation(fields: [location_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_career_location")
+  referential_index referential_index?
+
+  @@index([location_id], map: "fk_career_location_idx")
+}
+
+model location {
+  id            Int        @id @default(autoincrement())
+  name          String     @db.Text
+  address       String     @db.Text
+  link          String     @db.VarChar(90)
+  university_id Int
+  career        career[]
+  university    university @relation(fields: [university_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_location_university")
+
+  @@index([university_id], map: "fk_location_university_idx")
+}
+
+enum university_management {
+  PUBLICA
+  PRIVADA
+}

@@ -1,5 +1,6 @@
 import puppeteer, { Page } from 'puppeteer';
-import fsp from 'node:fs/promises';
+
+import { PrismaClient } from '@prisma/client';
 
 interface University {
 	name: string;
@@ -22,38 +23,98 @@ interface University {
 }
 
 const saveUniversities = async (universities: University[]) => {
-	let universitiesFileContent = '';
+	universities;
+	// let universitiesFileContent = '';
 
-	universities.forEach(university => {
-		universitiesFileContent += `Nombre de la universidad: ${university.name}\n`;
-		universitiesFileContent += `Link de la universidad: ${university.link}\n`;
-		universitiesFileContent += `	Localidades de ${university.name}\n`;
-		universitiesFileContent += `________________________________________________\n`;
+	// universities.forEach(university => {
+	// 	universitiesFileContent += `Nombre de la universidad: ${university.name}\n`;
+	// 	universitiesFileContent += `Link de la universidad: ${university.link}\n`;
+	// 	universitiesFileContent += `	Localidades de ${university.name}\n`;
+	// 	universitiesFileContent += `________________________________________________\n`;
 
-		university.locations?.forEach((location, index) => {
-			universitiesFileContent += `	Nombre de la localidad: ${location.name}\n`;
-			universitiesFileContent += `	Link de la localidad: ${location.link}\n`;
-			universitiesFileContent += `	Dirección de la localidad: ${location.address}\n`;
-			universitiesFileContent += `		Carreras que ofrece la localidad ${location.name}\n`;
-			universitiesFileContent += `		=====================================================\n`;
+	// 	university.locations?.forEach((location, index) => {
+	// 		universitiesFileContent += `	Nombre de la localidad: ${location.name}\n`;
+	// 		universitiesFileContent += `	Link de la localidad: ${location.link}\n`;
+	// 		universitiesFileContent += `	Dirección de la localidad: ${location.address}\n`;
+	// 		universitiesFileContent += `		Carreras que ofrece la localidad ${location.name}\n`;
+	// 		universitiesFileContent += `		=====================================================\n`;
 
-			if (university.locations) {
-				university.locations[index]?.careers.forEach(career => {
-					universitiesFileContent += `			Nombre de la carrera: ${career.name}\n`;
-					universitiesFileContent += `			Link de la carrera: ${career.link}\n`;
-					universitiesFileContent += `			descripción de la carrera: ${career.description}\n`;
-					universitiesFileContent += `			Índice referencial de la carrera: ${career.referentialIndex.index} (${career.referentialIndex.year})\n`;
+	// 		if (university.locations) {
+	// 			university.locations[index]?.careers.forEach(career => {
+	// 				universitiesFileContent += `			Nombre de la carrera: ${career.name}\n`;
+	// 				universitiesFileContent += `			Link de la carrera: ${career.link}\n`;
+	// 				universitiesFileContent += `			descripción de la carrera: ${career.description}\n`;
+	// 				universitiesFileContent += `			Índice referencial de la carrera: ${career.referentialIndex.index} (${career.referentialIndex.year})\n`;
+	// 			});
+	// 		}
+
+	// 		if (!university.locations)
+	// 			universitiesFileContent += `				NO SE ENCONTRARON CARRERAS\n`;
+
+	// 		universitiesFileContent += `		++++++++++++++++++++++++++++++++++++++++++++++++++++++\n`;
+	// 	});
+	// });
+	// await fsp.mkdir('./output', { recursive: true });
+	// await fsp.writeFile('./output/universidades.txt', universitiesFileContent);
+
+	const prisma = new PrismaClient();
+
+	let careerLength = 0;
+
+	for (let i = 0; i < universities.length; i++) {
+		const university = universities[i] as University;
+		const universityDB = await prisma.university.create({
+			data: {
+				link: university.link,
+				name: university.name,
+				management: 'PUBLICA',
+			},
+		});
+		const locations = university.locations;
+		for (let j = 0; j < locations.length; j++) {
+			const location = locations[j];
+			if (!location) break;
+			const locationDB = await prisma.location.create({
+				data: {
+					university_id: universityDB.id,
+					address: location.address,
+					link: location.link,
+					name: location.name,
+				},
+			});
+
+			const careers = location.careers;
+
+			for (let k = 0; k < careers.length; k++) {
+				const career = careers[k];
+
+				careerLength++;
+
+				if (!career) break;
+
+				const careerDB = await prisma.career.create({
+					data: {
+						location_id: locationDB.id,
+						description: career.description,
+						link: career.link,
+						name: career.name,
+						title: career.title,
+					},
+				});
+
+				await prisma.referential_index.create({
+					data: {
+						career_id: careerDB.id,
+						index: career.referentialIndex.index,
+						year: career.referentialIndex.year,
+					},
 				});
 			}
+		}
+	}
+	await prisma.$disconnect();
 
-			if (!university.locations)
-				universitiesFileContent += `				NO SE ENCONTRARON CARRERAS\n`;
-
-			universitiesFileContent += `		++++++++++++++++++++++++++++++++++++++++++++++++++++++\n`;
-		});
-	});
-	await fsp.mkdir('./output', { recursive: true });
-	await fsp.writeFile('./output/universidades.txt', universitiesFileContent);
+	console.log(careerLength);
 };
 
 const getUniversitiesGeneralInfo = async (page: Page) =>
@@ -142,6 +203,35 @@ const getAllUniversityLocations = async (page: Page) =>
 	});
 
 	await stateToSelect?.click();
+
+	// const universityType = await page.waitForSelector(
+	// 	'#select2-dep_admin-container'
+	// );
+
+	// console.log(universityType);
+
+	// await universityType?.click();
+	// await new Promise(resolve => {
+	// 	setTimeout(() => resolve(true), 3000);
+	// });
+
+	// const typeToSelect = await universityType?.evaluateHandle(() => {
+	// 	const options: HTMLLIElement[] = Array.from(
+	// 		document.querySelectorAll('[id^="select2-dep_admin-result"]')
+	// 	);
+	// 	const typeToSelect =
+	// 		options.find(option => option.textContent === 'PRIVADA') ||
+	// 		new HTMLLIElement();
+
+	// 	return typeToSelect;
+	// });
+
+	// await typeToSelect?.click();
+
+	// await Promise.all([
+	// 	page.waitForNavigation(),
+	// 	page.click('button[type=submit]'),
+	// ]);
 
 	await Promise.all([
 		page.waitForNavigation(),
@@ -264,8 +354,6 @@ const getAllUniversityLocations = async (page: Page) =>
 			locations: universitiesLocations[index] || [],
 		})
 	);
-
-	console.log(universities);
 
 	await saveUniversities(universities);
 
