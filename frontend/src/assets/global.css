@@ -1,6 +1,7 @@
 :root {
 	--primaryColor: #203060;
 	--secondaryColor: #2020c0;
+	--terciaryColor: #8080f0;
 }
 
 /*Box sizing*/
@@ -54,14 +55,66 @@ img {
 
 .header {
 	background-color: var(--primaryColor);
-	height: 10rem;
+	height: 7.5rem;
 }
 
 .header__ul {
+	display: flex;
+	justify-content: center;
+	display: flex;
+	height: 7.5rem;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo-link {
+	display: inline-block;
+	/* height: 10rem; */
+}
+
+.search-bar {
+	width: 60%;
+	display: flex;
+	justify-content: center;
+	height: 5rem;
+	border-radius: 5rem;
+	overflow: hidden;
+	box-shadow: #44444480 0 0 0.3rem 0.3rem;
+}
+
+.search-bar__input {
+	flex-basis: 75%;
+	outline: none;
 	text-align: center;
 }
 
-.header__logo-link {
-	display: inline-block;
-	height: 10rem;
+.search-bar__input::placeholder {
+	font-size: 2rem;
+	transition: all 0.3s;
+}
+
+.search-bar__input:focus::placeholder {
+	/* transform: scale(0); */
+	color: transparent;
+}
+
+.search-bar__select-type-query {
+	flex-basis: 15%;
+	outline: none;
+	text-align: center;
+}
+
+.search-bar__submit-button {
+	flex-basis: 10%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	outline: none;
+	background-color: var(--terciaryColor);
+	border: none;
+}
+
+.search-bar__submit-button:hover {
+	background-color: #6060d0;
 }
