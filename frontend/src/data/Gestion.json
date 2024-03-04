@@ -1,8 +1,4 @@
-{
-    "Gestion":{
-        "tipo":[
-            {"id":"1", "nombre":"Publica"},
-            {"id":"2","nombre":"Privada"}
-        ]  
-    }
-}
+[
+	{ "id": "1", "nombre": "Publica" },
+	{ "id": "2", "nombre": "Privada" }
+]
