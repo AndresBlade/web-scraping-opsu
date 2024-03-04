@@ -11,14 +11,17 @@ import fsp from 'node:fs/promises';
 		},
 	});
 
-	const universities = universitiesDB.map(university =>
-		university.location.map(location =>
-			location.career.map(career => ({
+	const universities = universitiesDB.map(university => ({
+		...university,
+		name: university.name.replace(/"/g, "'"),
+		location: university.location.map(location => ({
+			...location,
+			career: location.career.map(career => ({
 				...career,
 				name: career.name.trim(),
-			}))
-		)
-	);
+			})),
+		})),
+	}));
 
 	// for (let university of universities) {
 	// 	let universityFileContent = '';
@@ -67,6 +70,7 @@ import fsp from 'node:fs/promises';
 		JSON.stringify(universities)
 			.replace(/\\n/g, '')
 			.replace(/o\\y/g, 'y/o')
-			.replace(/\\/g, '')
+			.replace(/\\\s/, '')
+			.replace(/\\/, '')
 	);
 })();
