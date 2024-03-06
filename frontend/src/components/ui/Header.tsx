@@ -1,14 +1,20 @@
 import { FaSearch } from 'react-icons/fa';
-import { useForm } from '../../hooks/useForm';
+import { ChangeEvent } from 'react';
+import { SearchOption } from '../../types/SearchOption';
 
-type SearchOption = 'Universidad' | 'Carrera';
+interface Props {
+	searchName: string;
+	searchOption: SearchOption;
+	onInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
+	onSelectChange: (e: ChangeEvent<HTMLSelectElement>) => void;
+}
 
-export const Header = () => {
-	const { searchOption, name, onSelectChange, onInputChange } = useForm<{
-		searchOption: SearchOption;
-		name: string;
-	}>({ searchOption: 'Universidad', name: '' });
-
+export const Header = ({
+	onInputChange,
+	onSelectChange,
+	searchName,
+	searchOption,
+}: Props) => {
 	return (
 		<header className="header">
 			<nav className="header__nav">
@@ -16,10 +22,10 @@ export const Header = () => {
 					<li className="header__search-bar search-bar">
 						<input
 							type="text"
-							name="name"
+							name="searchName"
 							id="name"
 							placeholder={`Nombre de la ${searchOption}`}
-							value={name}
+							value={searchName}
 							onChange={onInputChange}
 							className="search-bar__input"
 						/>

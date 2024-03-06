@@ -1,25 +1,21 @@
-import jsonStates from '../../data/states.json';
 import statesPng from '../../assets/states.png';
 import managementPng from '../../assets/management.png';
 import jsonManagementTypes from '../../data/management.json';
-import { useForm } from '../../hooks/useForm';
+import { ChangeEvent } from 'react';
 
-interface Form {
-	states: { value: string; content: string; checked: boolean }[];
+interface Props {
 	managementType: null | string;
+	states: { value: string; content: string; checked: boolean }[];
+	onRadioChange: (e: ChangeEvent<HTMLInputElement>) => void;
+	onCheckboxChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Sidebar = () => {
-	const { states, managementType, onRadioChange, onCheckboxChange } =
-		useForm<Form>({
-			states: jsonStates.map(state => ({
-				value: state.id,
-				content: state.name,
-				checked: false,
-			})),
-			managementType: null,
-		});
-
+const Sidebar = ({
+	managementType,
+	states,
+	onRadioChange,
+	onCheckboxChange,
+}: Props) => {
 	return (
 		<div>
 			<aside className="sidebar">
