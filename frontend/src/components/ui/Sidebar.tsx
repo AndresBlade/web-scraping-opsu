@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import estados from '../../data/estados.json';
-import estadosPng from '../../assets/estados.png';
-import gestionPng from '../../assets/gestion.png';
-import gestion from '../../data/gestion.json';
+import states from '../../data/states.json';
+import statesPng from '../../assets/states.png';
+import managementPng from '../../assets/management.png';
+import managementTypes from '../../data/management.json';
 const Sidebar = () => {
 	const [stateSelect, setStateSelect] = useState(
-		Object.fromEntries(estados.map(estado => [estado.nombre, false]))
+		Object.fromEntries(states.map(state => [state.name, false]))
 	);
 
 	console.log(stateSelect);
@@ -21,12 +21,12 @@ const Sidebar = () => {
 			<aside className="sidebar">
 				<div className="sidebar__hover">
 					<div className="sidebar__flex">
-						<img src={gestionPng} alt="gestion" />
+						<img src={managementPng} alt="gestion" />
 						<h2>Gestion</h2>
 					</div>
 					<ul className="principal">
 						<li className="sidebar__list">
-							{gestion.map((gestion, index) => {
+							{managementTypes.map((management, index) => {
 								return (
 									<div
 										className="sidebar__list-li"
@@ -35,13 +35,13 @@ const Sidebar = () => {
 										<input
 											type="radio"
 											name="gestion"
-											id={gestion.id}
+											id={management.id}
 											className="sidebar__li-item"
-											title={gestion.nombre}
-											value={gestion.nombre}
+											title={management.name}
+											value={management.name}
 										/>
-										<label htmlFor={gestion.id}>
-											{gestion.nombre}
+										<label htmlFor={management.id}>
+											{management.name}
 										</label>
 									</div>
 								);
@@ -51,12 +51,12 @@ const Sidebar = () => {
 				</div>
 				<div className="sidebar__hover sidebar__hover-vh">
 					<div className="sidebar__flex">
-						<img src={estadosPng} alt="estados" />
+						<img src={statesPng} alt="estados" />
 						<h2>Estados</h2>
 					</div>
 					<ul className="principal">
 						<li className="sidebar__list">
-							{estados.map((estado, index) => {
+							{states.map((state, index) => {
 								// Code to render each estado item
 								return (
 									<div
@@ -67,13 +67,13 @@ const Sidebar = () => {
 											onChange={handleOnCheckbox}
 											className="sidebar__li-item"
 											type="checkbox"
-											name={estado.nombre}
-											id={estado.id}
-											title={estado.nombre}
-											value={estado.nombre}
+											name={state.name}
+											id={state.id}
+											title={state.name}
+											value={state.name}
 										/>
-										<label htmlFor={estado.id}>
-											{estado.nombre}
+										<label htmlFor={state.id}>
+											{state.name}
 										</label>
 									</div>
 								);
