@@ -55,7 +55,7 @@ img {
 
 /*APP*/
 
-.app-flex{
+.app-flex {
 	display: flex;
 }
 
@@ -128,7 +128,7 @@ img {
 }
 
 /*UNIVERSITIES*/
-.universities-container{
+.universities-container {
 	width: 80%;
 	height: 100vh;
 	padding: 2rem;
@@ -139,14 +139,14 @@ img {
 	gap: 2rem;
 	overflow-y: scroll;
 }
-.universities-card{
+.universities-card {
 	border: #0061ff 1px solid;
 	background-color: #0061ff;
 	font-size: 1.1rem;
 	line-height: 1.8;
-	border-radius: 2rem;	
+	border-radius: 2rem;
 }
-.universities-card__image{
+.universities-card__image {
 	display: flex;
 	padding: 1rem;
 	justify-content: center;
@@ -154,10 +154,10 @@ img {
 	height: 50%;
 	border-radius: 2rem 2rem 0 3rem;
 }
-.universities-card__image_png{
+.universities-card__image_png {
 	width: 150px;
 }
-.universities-card__info{
+.universities-card__info {
 	padding: 1rem;
 	height: 50%;
 	overflow-y: scroll;
@@ -165,10 +165,10 @@ img {
 	text-transform: uppercase;
 }
 .universities-container::-webkit-scrollbar,
-.universities-card__info::-webkit-scrollbar{
+.universities-card__info::-webkit-scrollbar {
 	background-color: transparent;
 }
-h2 > span{
+h2 > span {
 	color: black;
 }
 
@@ -230,4 +230,53 @@ h2 > span{
 	.sidebar {
 		width: 30%;
 	}
+}
+
+/* University Page */
+
+.university {
+	padding: 2rem 4rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
+}
+
+.university__name {
+	display: block;
+	text-align: center;
+	width: 100%;
+	padding: 1.5rem 2rem;
+	font-size: 3rem;
+	font-weight: 700;
+	text-decoration: none;
+	color: #000000;
+	background-color: #e5e5e5;
+	border-radius: 2rem;
+	border: #d0d0d0 solid 1rem;
+}
+
+.university__locations {
+	display: grid;
+	width: 100%;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto;
+	gap: 2rem;
+}
+
+.location-grid-element {
+	background-color: #e5e5e5;
+	padding: 1.5rem;
+	text-decoration: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	color: #000000;
+	border-radius: 1rem;
+	border: #d0d0d0 solid 1rem;
+}
+
+.location-grid-element__name {
+	font-size: 2rem;
 }

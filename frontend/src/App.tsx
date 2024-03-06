@@ -1,9 +1,10 @@
 import { Header } from './components/ui/Header';
 import Sidebar from './components/ui/Sidebar';
+import { University } from './components/university/University';
 import jsonStates from './data/states.json';
 import { useForm } from './hooks/useForm';
 import { SearchForm } from './interfaces/SearchForm';
-import Universities from './components/ui/Universities';
+import jsonUniversities from './data/universities.json';
 
 function App() {
 	const {
@@ -34,20 +35,15 @@ function App() {
 				searchName={searchName}
 				searchOption={searchOption}
 			/>
-			<div className='app-flex'>
+			<div className="app-flex">
 				<Sidebar
 					managementType={managementType}
 					onCheckboxChange={onCheckboxChange}
 					onRadioChange={onRadioChange}
 					states={states}
 				/>
-				<Universities 
-				searchName={searchName}
-				managementType={managementType}
-				states={states}
-				/>
+				<University university={jsonUniversities[9]} />
 			</div>
-
 		</>
 	);
 }
