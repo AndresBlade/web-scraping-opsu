@@ -25,7 +25,7 @@ function App() {
 		})),
 		managementType: null,
 	});
-
+	console.log(managementType);
 	return (
 		<>
 			<Header
@@ -41,7 +41,11 @@ function App() {
 					onRadioChange={onRadioChange}
 					states={states}
 				/>
-				<Universities />
+				<Universities 
+				searchName={searchName}
+				managementType={managementType}
+				states={states}
+				/>
 			</div>
 
 		</>
