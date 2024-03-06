@@ -53,6 +53,12 @@ img {
 	max-height: 100%;
 }
 
+/*APP*/
+
+.app-flex{
+	display: flex;
+}
+
 /*Header*/
 
 .header {
@@ -121,8 +127,27 @@ img {
 	background-color: #6060d0;
 }
 
+/*UNIVERSITIES*/
+.universities-container{
+	width: 80%;
+	height: 100vh;
+	padding: 2rem;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	justify-content: space-between;
+	gap: 2rem;
+	overflow-y: scroll;
+}
+.universities-card{
+	background-color: #e5e5e5;
+	border-radius: 1rem;
+}
+
+
 /*SIDEBAR*/
 .sidebar {
+
+	position: relative;
 	top: 0;
 	bottom: 0;
 	background-color: var(--primaryColor);
@@ -133,8 +158,7 @@ img {
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
-	border-radius: 0 2rem 2rem 0;
-	box-shadow: 9px 22px 10px 3px rgba(0, 0, 0, 0.35);
+	box-shadow: 9px 10px 10px 3px rgba(0, 0, 0, 0.35);
 }
 .sidebar__flex {
 	display: flex;
