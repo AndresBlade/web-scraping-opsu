@@ -16,11 +16,42 @@ export const useForm = <Form>(initialValue: Form) => {
 		});
 	};
 
+	const onCheckboxChange = ({
+		target,
+	}: React.ChangeEvent<HTMLInputElement>) => {
+		const { name, value, checked } = target;
+		setFormState(formState => {
+			console.log(formState);
+			const typedFormState = formState as Record<string, unknown>; // Add type assertion
+
+			const checkboxValues = typedFormState[name] as {
+				value: unknown;
+				checked: boolean;
+				content: string;
+			}[];
+
+			const checkboxIndex = checkboxValues.findIndex(
+				checkbox => checkbox.value === value
+			);
+
+			checkboxValues[checkboxIndex] = {
+				value: value,
+				content: checkboxValues[checkboxIndex].content,
+				checked,
+			};
+			return {
+				...formState,
+				[name]: checkboxValues,
+			};
+		});
+	};
+
 	return {
 		formState,
 		onInputChange,
 		setFormState,
 		onSelectChange,
+		onCheckboxChange,
 		...formState,
 	};
 };

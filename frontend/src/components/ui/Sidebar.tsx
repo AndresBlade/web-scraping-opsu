@@ -1,20 +1,16 @@
-import React, { useState } from 'react';
-import states from '../../data/states.json';
+import jsonStates from '../../data/states.json';
 import statesPng from '../../assets/states.png';
 import managementPng from '../../assets/management.png';
 import managementTypes from '../../data/management.json';
+import { useForm } from '../../hooks/useForm';
 const Sidebar = () => {
-	const [stateSelect, setStateSelect] = useState(
-		Object.fromEntries(states.map(state => [state.name, false]))
-	);
-
-	console.log(stateSelect);
-	const handleOnCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
-		setStateSelect({
-			...stateSelect,
-			[e.target.value]: e.target.checked,
-		});
-	};
+	const { states, onCheckboxChange } = useForm({
+		states: jsonStates.map(state => ({
+			value: state.id,
+			content: state.name,
+			checked: false,
+		})),
+	});
 
 	return (
 		<div>
@@ -58,22 +54,24 @@ const Sidebar = () => {
 						<li className="sidebar__list">
 							{states.map((state, index) => {
 								// Code to render each estado item
+								const htmlID = `${state.content}Checkbox`;
 								return (
 									<div
 										className="sidebar__list-li"
 										key={index}
 									>
 										<input
-											onChange={handleOnCheckbox}
+											onChange={onCheckboxChange}
 											className="sidebar__li-item"
 											type="checkbox"
-											name={state.name}
-											id={state.id}
-											title={state.name}
-											value={state.name}
+											name={'states'}
+											id={htmlID}
+											title={state.content}
+											value={state.value}
+											checked={state.checked}
 										/>
-										<label htmlFor={state.id}>
-											{state.name}
+										<label htmlFor={htmlID}>
+											{state.content}
 										</label>
 									</div>
 								);
