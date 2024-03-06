@@ -21,8 +21,7 @@ export const useForm = <Form>(initialValue: Form) => {
 	}: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value, checked } = target;
 		setFormState(formState => {
-			console.log(formState);
-			const typedFormState = formState as Record<string, unknown>; // Add type assertion
+			const typedFormState = formState as Record<string, unknown>;
 
 			const checkboxValues = typedFormState[name] as {
 				value: unknown;
@@ -46,12 +45,19 @@ export const useForm = <Form>(initialValue: Form) => {
 		});
 	};
 
+	const onRadioChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
+		const { name, value } = target;
+
+		setFormState({ ...formState, [name]: value });
+	};
+
 	return {
 		formState,
 		onInputChange,
 		setFormState,
 		onSelectChange,
 		onCheckboxChange,
+		onRadioChange,
 		...formState,
 	};
 };

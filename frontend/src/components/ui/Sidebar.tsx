@@ -1,16 +1,24 @@
 import jsonStates from '../../data/states.json';
 import statesPng from '../../assets/states.png';
 import managementPng from '../../assets/management.png';
-import managementTypes from '../../data/management.json';
+import jsonManagementTypes from '../../data/management.json';
 import { useForm } from '../../hooks/useForm';
+
+interface Form {
+	states: { value: string; content: string; checked: boolean }[];
+	managementType: null | string;
+}
+
 const Sidebar = () => {
-	const { states, onCheckboxChange } = useForm({
-		states: jsonStates.map(state => ({
-			value: state.id,
-			content: state.name,
-			checked: false,
-		})),
-	});
+	const { states, managementType, onRadioChange, onCheckboxChange } =
+		useForm<Form>({
+			states: jsonStates.map(state => ({
+				value: state.id,
+				content: state.name,
+				checked: false,
+			})),
+			managementType: null,
+		});
 
 	return (
 		<div>
@@ -22,7 +30,8 @@ const Sidebar = () => {
 					</div>
 					<ul className="principal">
 						<li className="sidebar__list">
-							{managementTypes.map((management, index) => {
+							{jsonManagementTypes.map((management, index) => {
+								const htmlID = `${management.name}Checkbox`;
 								return (
 									<div
 										className="sidebar__list-li"
@@ -30,13 +39,17 @@ const Sidebar = () => {
 									>
 										<input
 											type="radio"
-											name="gestion"
-											id={management.id}
+											name="managementType"
+											onChange={onRadioChange}
+											id={htmlID}
 											className="sidebar__li-item"
 											title={management.name}
-											value={management.name}
+											value={management.id}
+											checked={
+												management.id === managementType
+											}
 										/>
-										<label htmlFor={management.id}>
+										<label htmlFor={htmlID}>
 											{management.name}
 										</label>
 									</div>
