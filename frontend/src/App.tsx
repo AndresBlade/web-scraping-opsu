@@ -1,10 +1,12 @@
 import { Header } from './components/ui/Header';
 import Sidebar from './components/ui/Sidebar';
-import { University } from './components/university/University';
 import jsonStates from './data/states.json';
 import { useForm } from './hooks/useForm';
 import { SearchForm } from './interfaces/SearchForm';
-import jsonUniversities from './data/universities.json';
+import Universities from './components/university/Universities';
+import { useState } from 'react';
+import { UniversityPage } from './components/university/University';
+import { University } from './interfaces/University';
 
 function App() {
 	const {
@@ -26,6 +28,10 @@ function App() {
 		})),
 		managementType: null,
 	});
+
+	const [clickedUniversity, setClickedUniversity] =
+		useState<null | University>(null);
+
 	console.log(managementType);
 	return (
 		<>
@@ -34,6 +40,7 @@ function App() {
 				onSelectChange={onSelectChange}
 				searchName={searchName}
 				searchOption={searchOption}
+				setClickedUniversity={setClickedUniversity}
 			/>
 			<div className="app-flex">
 				<Sidebar
@@ -42,7 +49,16 @@ function App() {
 					onRadioChange={onRadioChange}
 					states={states}
 				/>
-				<University university={jsonUniversities[9]} />
+				{clickedUniversity ? (
+					<UniversityPage university={clickedUniversity} />
+				) : (
+					<Universities
+						managementType={managementType}
+						searchName={searchName}
+						states={states}
+						setClickedUniversity={setClickedUniversity}
+					/>
+				)}
 			</div>
 		</>
 	);

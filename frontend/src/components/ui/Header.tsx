@@ -1,12 +1,16 @@
 import { FaSearch } from 'react-icons/fa';
 import { ChangeEvent } from 'react';
 import { SearchOption } from '../../types/SearchOption';
+import { University } from '../../interfaces/University';
 
 interface Props {
 	searchName: string;
 	searchOption: SearchOption;
 	onInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
 	onSelectChange: (e: ChangeEvent<HTMLSelectElement>) => void;
+	setClickedUniversity: React.Dispatch<
+		React.SetStateAction<null | University>
+	>;
 }
 
 export const Header = ({
@@ -14,6 +18,7 @@ export const Header = ({
 	onSelectChange,
 	searchName,
 	searchOption,
+	setClickedUniversity,
 }: Props) => {
 	return (
 		<header className="header">
@@ -26,6 +31,7 @@ export const Header = ({
 							id="name"
 							placeholder={`Nombre de la ${searchOption}`}
 							value={searchName}
+							onFocus={() => setClickedUniversity(null)}
 							onChange={onInputChange}
 							className="search-bar__input"
 						/>

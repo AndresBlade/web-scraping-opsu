@@ -145,6 +145,7 @@ img {
 	font-size: 1.1rem;
 	line-height: 1.8;
 	border-radius: 2rem;
+	cursor: pointer;
 }
 .universities-card__image {
 	display: flex;
@@ -235,6 +236,7 @@ h2 > span {
 /* University Page */
 
 .university {
+	width: 80%;
 	padding: 2rem 4rem;
 	display: flex;
 	flex-direction: column;
@@ -251,22 +253,24 @@ h2 > span {
 	font-weight: 700;
 	text-decoration: none;
 	color: #000000;
-	background-color: #e5e5e5;
+	background-color: #0061ff;
 	border-radius: 2rem;
-	border: #d0d0d0 solid 1rem;
 }
 
 .university__locations {
 	display: grid;
 	width: 100%;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: auto;
 	gap: 2rem;
 }
 
 .location-grid-element {
-	background-color: #e5e5e5;
+	background-color: #0061ff;
 	padding: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
 	text-decoration: none;
 	display: flex;
 	flex-direction: column;
@@ -274,9 +278,14 @@ h2 > span {
 	gap: 1rem;
 	color: #000000;
 	border-radius: 1rem;
-	border: #d0d0d0 solid 1rem;
 }
 
 .location-grid-element__name {
 	font-size: 2rem;
+	text-align: center;
+}
+
+.location-grid-element__number-of-careers {
+	color: #ffffff;
+	text-align: center;
 }
