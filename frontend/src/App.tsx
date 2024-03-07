@@ -7,6 +7,8 @@ import Universities from './components/university/Universities';
 import { useState } from 'react';
 import { UniversityPage } from './components/university/University';
 import { University } from './interfaces/University';
+import { Location } from './interfaces/Location';
+import { LocationPage } from './components/location/Location';
 
 function App() {
 	const {
@@ -32,7 +34,12 @@ function App() {
 	const [clickedUniversity, setClickedUniversity] =
 		useState<null | University>(null);
 
-	console.log(managementType);
+	const [clickedLocation, setClickedLocation] = useState<null | {
+		university: University;
+		location: Location;
+	}>(null);
+
+	console.log(clickedLocation);
 	return (
 		<>
 			<Header
@@ -41,6 +48,7 @@ function App() {
 				searchName={searchName}
 				searchOption={searchOption}
 				setClickedUniversity={setClickedUniversity}
+				setClickedLocation={setClickedLocation}
 			/>
 			<div className="app-flex">
 				<Sidebar
@@ -50,7 +58,16 @@ function App() {
 					states={states}
 				/>
 				{clickedUniversity ? (
-					<UniversityPage university={clickedUniversity} />
+					<UniversityPage
+						university={clickedUniversity}
+						setClickedLocation={setClickedLocation}
+						setClickedUniversity={setClickedUniversity}
+					/>
+				) : clickedLocation ? (
+					<LocationPage
+						university={clickedLocation.university}
+						location={clickedLocation.location}
+					/>
 				) : (
 					<Universities
 						managementType={managementType}
