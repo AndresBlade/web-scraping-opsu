@@ -53,6 +53,12 @@ img {
 	max-height: 100%;
 }
 
+/*Utilities*/
+
+.bold {
+	font-weight: 700;
+}
+
 /*APP*/
 
 .app-flex {
@@ -277,6 +283,7 @@ h2 > span {
 	align-items: center;
 	gap: 1rem;
 	color: #000000;
+	cursor: pointer;
 	border-radius: 1rem;
 }
 
@@ -288,4 +295,70 @@ h2 > span {
 .location-grid-element__number-of-careers {
 	color: #ffffff;
 	text-align: center;
+}
+
+/*Location */
+
+.location {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.location__name {
+	text-align: center;
+	font-size: 2rem;
+	color: #0061ff;
+}
+
+.location__name:link {
+	text-decoration: none;
+}
+
+.location__general-info {
+	display: flex;
+	flex-direction: column;
+	background-color: #e5e5e5;
+	border-radius: 2rem;
+	gap: 1.5rem;
+	padding: 1.5rem;
+	border: #aaaaaa solid 2px;
+}
+
+.careers {
+	display: flex;
+	flex-direction: column;
+}
+
+.careers__header {
+	display: flex;
+	padding: 2rem;
+	justify-content: space-between;
+	font-weight: 700;
+	background-color: var(--primaryColor);
+	height: 5rem;
+	align-items: center;
+	color: #ffffff;
+}
+.careers__header > * {
+	flex: 1 1 0;
+	text-align: center;
+}
+
+.career {
+	display: flex;
+	height: auto;
+	align-items: center;
+	padding: 2rem;
+	line-height: 1.5;
+	justify-content: space-between;
+}
+
+.career > * {
+	flex: 1 1 0;
+	text-align: center;
+}
+
+.career:nth-child(2n) {
+	background-color: #e5e5e5;
 }
