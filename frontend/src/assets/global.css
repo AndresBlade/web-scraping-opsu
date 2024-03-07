@@ -165,12 +165,14 @@ img {
 	text-transform: uppercase;
 }
 .universities-container::-webkit-scrollbar,
-.universities-card__info::-webkit-scrollbar{
+.universities-card__info::-webkit-scrollbar,
+.carrers-container{
 	background-color: transparent;
 }
 h2 > span{
 	color: black;
 }
+
 
 /*SIDEBAR*/
 .sidebar {

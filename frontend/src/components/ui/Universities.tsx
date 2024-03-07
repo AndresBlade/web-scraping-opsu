@@ -13,7 +13,9 @@ const Universities = ({searchName,states,managementType}:Form) => {
     
     return (
         <div className='universities-container'>
-            {jsonUniversities.filter(university => university.name.includes(searchName) && (((university.management.toUpperCase() === "PUBLICA" ? "1" : "2") === managementType) ||  managementType === null)).map((university) => {
+            {jsonUniversities.filter(university => (university.name.includes(searchName) || university.location.some(location =>{
+                return(
+                location.name.includes(searchName))}) || university.location.some(location=>location.career.some(career=>career.name.includes(searchName)))) && (((university.management.toUpperCase() === "PUBLICA" ? "1" : "2") === managementType) ||  managementType === null)).map((university) => {
                 // code to render each university
                 return (
                     <div key={university.id} className='universities-card' >
