@@ -1,15 +1,18 @@
 import React from 'react'
 import jsonUniversities from '../../data/universities.json'
 import univeristyPNG from '../../assets/university.png'
+import { University } from '../../interfaces/University'
 
 interface Form {
     searchName: string;
-    states: {value: string, content: string, checked: boolean}[];
+    states: { value: string; content: string; checked: boolean }[];
     managementType: null | string;
+    setClickedUniversity: React.Dispatch<
+        React.SetStateAction<null | University>
+    >;
 }
 
-
-const Universities = ({searchName,states,managementType}:Form) => {
+const Universities = ({searchName,states,managementType, setClickedUniversity}:Form) => {
     
     return (
         <div className='universities-container'>
@@ -18,7 +21,8 @@ const Universities = ({searchName,states,managementType}:Form) => {
                 location.name.includes(searchName))}) || university.location.some(location=>location.career.some(career=>career.name.includes(searchName)))) && (((university.management.toUpperCase() === "PUBLICA" ? "1" : "2") === managementType) ||  managementType === null)).map((university) => {
                 // code to render each university
                 return (
-                    <div key={university.id} className='universities-card' >
+                    <div key={university.id} onClick={() => setClickedUniversity(university)}
+                    className='universities-card' >
                         <div className='universities-card__image'>
                             <img src={univeristyPNG} alt="university " className='universities-card__image_png' />
                         </div>
