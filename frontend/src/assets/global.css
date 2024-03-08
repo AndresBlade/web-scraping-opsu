@@ -1,6 +1,6 @@
 :root {
 	--primaryColor: #203060;
-	--secondaryColor: #2020c0;
+	--secondaryColor: #4066cc;
 	--primaryFont: 'Sora', sans-serif;
 	--terciaryColor: #8080f0;
 }
@@ -146,8 +146,8 @@ img {
 	overflow-y: scroll;
 }
 .universities-card {
-	border: #0061ff 1px solid;
-	background-color: #0061ff;
+	border: var(--secondaryColor) 1px solid;
+	background-color: var(--secondaryColor);
 	font-size: 1.1rem;
 	line-height: 1.8;
 	border-radius: 2rem;
@@ -258,8 +258,10 @@ h2 > span {
 	font-size: 3rem;
 	font-weight: 700;
 	text-decoration: none;
-	color: #000000;
-	background-color: #0061ff;
+	color: #ffffff;
+	background-color: var(--secondaryColor);
+	text-shadow: #808080 1px 0 0, #808080 0 1px 0, #808080 -1px 0 0,
+		#808080 0 -1px 0;
 	border-radius: 2rem;
 }
 
@@ -272,7 +274,7 @@ h2 > span {
 }
 
 .location-grid-element {
-	background-color: #0061ff;
+	background-color: var(--secondaryColor);
 	padding: 1.5rem;
 	display: flex;
 	flex-direction: column;
@@ -290,11 +292,16 @@ h2 > span {
 .location-grid-element__name {
 	font-size: 2rem;
 	text-align: center;
+	color: #ffffff;
+	text-shadow: #808080 1px 0 0, #808080 0 1px 0, #808080 -1px 0 0,
+		#808080 0 -1px 0;
 }
 
 .location-grid-element__number-of-careers {
 	color: #ffffff;
 	text-align: center;
+	text-shadow: #808080 1px 0 0, #808080 0 1px 0, #808080 -1px 0 0,
+		#808080 0 -1px 0;
 }
 
 /*Location */
@@ -302,7 +309,12 @@ h2 > span {
 .location {
 	display: flex;
 	flex-direction: column;
+	justify-content: start;
 	gap: 2rem;
+}
+
+.location > * {
+	flex: 0 0 0;
 }
 
 .location__name {
