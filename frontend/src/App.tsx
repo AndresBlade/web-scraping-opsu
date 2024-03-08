@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 import { Header } from './components/ui/Header';
 import Sidebar from './components/ui/Sidebar';
 import jsonStates from './data/states.json';
@@ -12,9 +13,7 @@ import { LocationPage } from './components/location/Location';
 
 function App() {
 	const {
-		searchOption,
 		searchName,
-		onSelectChange,
 		onInputChange,
 		states,
 		managementType,
@@ -53,9 +52,7 @@ function App() {
 		<>
 			<Header
 				onInputChange={onInputChange}
-				onSelectChange={onSelectChange}
 				searchName={searchName}
-				searchOption={searchOption}
 				setClickedUniversity={setClickedUniversity}
 				setClickedLocation={setClickedLocation}
 			/>

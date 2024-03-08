@@ -14,7 +14,6 @@ interface Form {
 
 const Universities = ({
 	searchName,
-	states,
 	managementType,
 	setClickedUniversity,
 }: Form) => {

@@ -1,14 +1,10 @@
-import { FaSearch } from 'react-icons/fa';
 import { ChangeEvent } from 'react';
-import { SearchOption } from '../../types/SearchOption';
 import { University } from '../../interfaces/University';
 import { Location } from '../../interfaces/Location';
 
 interface Props {
 	searchName: string;
-	searchOption: SearchOption;
 	onInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
-	onSelectChange: (e: ChangeEvent<HTMLSelectElement>) => void;
 	setClickedUniversity: React.Dispatch<
 		React.SetStateAction<null | University>
 	>;
@@ -22,9 +18,7 @@ interface Props {
 
 export const Header = ({
 	onInputChange,
-	onSelectChange,
 	searchName,
-	searchOption,
 	setClickedUniversity,
 	setClickedLocation,
 }: Props) => {
@@ -37,7 +31,7 @@ export const Header = ({
 							type="text"
 							name="searchName"
 							id="name"
-							placeholder={`Nombre de la ${searchOption}`}
+							placeholder={`Nombre de la universidad, localidad, carrera...`}
 							value={searchName}
 							onFocus={() => {
 								setClickedUniversity(null);
@@ -46,21 +40,6 @@ export const Header = ({
 							onChange={onInputChange}
 							className="search-bar__input"
 						/>
-						<select
-							name="searchOption"
-							id="searchOption"
-							className="search-bar__select-type-query"
-							onChange={onSelectChange}
-						>
-							<option value="Universidad">Universidad</option>
-							<option value="Carrera">Carrera</option>
-						</select>
-						<button
-							type="submit"
-							className="search-bar__submit-button"
-						>
-							<FaSearch />
-						</button>
 					</li>
 					{/* <li className="header__logo logo">
 						<a

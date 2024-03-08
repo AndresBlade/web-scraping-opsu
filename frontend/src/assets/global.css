@@ -97,7 +97,7 @@ img {
 }
 
 .search-bar__input {
-	flex-basis: 75%;
+	flex-basis: 100%;
 	outline: none;
 	text-align: center;
 }
@@ -136,7 +136,7 @@ img {
 /*UNIVERSITIES*/
 .universities-container {
 	width: 80%;
-	height: 100vh;
+	height: calc(100vh - 7.5rem);
 	padding: 2rem;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -179,7 +179,6 @@ h2 > span {
 	color: black;
 }
 
-
 /*SIDEBAR*/
 .sidebar {
 	position: relative;
@@ -187,7 +186,7 @@ h2 > span {
 	bottom: 0;
 	background-color: var(--primaryColor);
 	width: 20%;
-	height: 100vh;
+	height: calc(100vh - 7.5rem);
 	color: white;
 	padding: 0 0 0 2rem;
 	display: flex;
