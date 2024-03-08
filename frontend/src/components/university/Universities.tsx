@@ -20,22 +20,42 @@ const Universities = ({
 	return (
 		<div className="universities-container">
 			{jsonUniversities
-				.filter(
-					university =>
-						(university.name.includes(searchName) ||
+				.filter(university => {
+					const universityName = university.name
+						.replace(/Á/gi, 'A')
+						.replace(/É/gi, 'E')
+						.replace(/Í/gi, 'I')
+						.replace(/Ó/gi, 'O')
+						.replace(/Ú/gi, 'U');
+
+					return (
+						(universityName.includes(searchName) ||
 							university.location.some(location => {
-								return location.name.includes(searchName);
+								const locationName = location.name
+									.replace(/Á/gi, 'A')
+									.replace(/É/gi, 'E')
+									.replace(/Í/gi, 'I')
+									.replace(/Ó/gi, 'O')
+									.replace(/Ú/gi, 'U');
+								return locationName.includes(searchName);
 							}) ||
 							university.location.some(location =>
-								location.career.some(career =>
-									career.name.includes(searchName)
-								)
+								location.career.some(career => {
+									const careerName = career.name
+										.replace(/Á/gi, 'A')
+										.replace(/É/gi, 'E')
+										.replace(/Í/gi, 'I')
+										.replace(/Ó/gi, 'O')
+										.replace(/Ú/gi, 'U');
+									return careerName.includes(searchName);
+								})
 							)) &&
 						(managementType === '3' ||
 							(university.management.toUpperCase() === 'PUBLICA'
 								? '1'
 								: '2') === managementType)
-				)
+					);
+				})
 				.map(university => {
 					// code to render each university
 					return (

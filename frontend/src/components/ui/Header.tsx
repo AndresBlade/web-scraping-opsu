@@ -38,7 +38,13 @@ export const Header = ({
 								setClickedLocation(null);
 							}}
 							onChange={e => {
-								e.target.value = e.target.value.toUpperCase();
+								e.target.value = e.target.value
+									.toUpperCase()
+									.replace(/Á/gi, 'A')
+									.replace(/É/gi, 'E')
+									.replace(/Í/gi, 'I')
+									.replace(/Ó/gi, 'O')
+									.replace(/Ú/gi, 'U');
 								onInputChange(e);
 							}}
 							className="search-bar__input"
