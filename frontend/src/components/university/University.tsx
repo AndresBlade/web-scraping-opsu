@@ -25,8 +25,9 @@ export const UniversityPage = ({
 				{university.name}
 			</a>
 			<div className="university__locations">
-				{university.location.map(location => (
+				{university.location.map((location, index) => (
 					<div
+						key={index}
 						className="location-grid-element"
 						onClick={() => {
 							setClickedUniversity(null);

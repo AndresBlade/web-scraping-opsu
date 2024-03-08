@@ -5,9 +5,23 @@ import { University } from '../../interfaces/University';
 interface LocationProps {
 	university: University;
 	location: Location;
+	setClickedLocation: React.Dispatch<
+		React.SetStateAction<null | {
+			university: University;
+			location: Location;
+		}>
+	>;
+	setClickedUniversity: React.Dispatch<
+		React.SetStateAction<null | University>
+	>;
 }
 
-export const LocationPage = ({ university, location }: LocationProps) => {
+export const LocationPage = ({
+	university,
+	location,
+	setClickedLocation,
+	setClickedUniversity,
+}: LocationProps) => {
 	return (
 		<div className="location universities-container">
 			<a className="location__name" href={location.link}>
@@ -16,8 +30,16 @@ export const LocationPage = ({ university, location }: LocationProps) => {
 			</a>
 			<div className="location__general-info">
 				<p className="location__university">
-					<span className="bold">Perteneciente a:</span>{' '}
-					{university.name}
+					<span className="bold">Perteneciente a: </span>
+					<span
+						className="location__university-name"
+						onClick={() => {
+							setClickedLocation(null);
+							setClickedUniversity(university);
+						}}
+					>
+						{university.name}
+					</span>
 				</p>
 				{location.career.length ? (
 					<p className="location__number-of-careers">
@@ -44,8 +66,8 @@ export const LocationPage = ({ university, location }: LocationProps) => {
 						</p>
 						<p className="careers__title-header">Título</p>
 					</div>
-					{location.career.map(career => (
-						<div className="career">
+					{location.career.map((career, index) => (
+						<div className="career" key={index}>
 							<p className="career__name">{career.name}</p>
 
 							{+career.referential_index.index === 0 ? (

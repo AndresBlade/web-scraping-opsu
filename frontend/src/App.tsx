@@ -73,6 +73,8 @@ function App() {
 					<LocationPage
 						university={clickedLocation.university}
 						location={clickedLocation.location}
+						setClickedLocation={setClickedLocation}
+						setClickedUniversity={setClickedUniversity}
 					/>
 				) : (
 					<Universities

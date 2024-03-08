@@ -311,6 +311,11 @@ h2 > span {
 	color: #0061ff;
 }
 
+.location__university-name {
+	color: #0061ff;
+	cursor: pointer;
+}
+
 .location__name:link {
 	text-decoration: none;
 }
