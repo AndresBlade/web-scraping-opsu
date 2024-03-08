@@ -37,7 +37,6 @@ function App() {
 		),
 		managementType: '3',
 	});
-	console.log(managementType);
 
 	const [clickedUniversity, setClickedUniversity] =
 		useState<null | University>(null);
@@ -47,7 +46,6 @@ function App() {
 		location: Location;
 	}>(null);
 
-	console.log(clickedLocation);
 	return (
 		<>
 			<Header
