@@ -4,7 +4,7 @@ import jsonManagementTypes from '../../data/management.json';
 import { ChangeEvent } from 'react';
 
 interface Props {
-	managementType: null | string;
+	managementType: string;
 	states: { value: string; content: string; checked: boolean }[];
 	onRadioChange: (e: ChangeEvent<HTMLInputElement>) => void;
 	onCheckboxChange: (e: ChangeEvent<HTMLInputElement>) => void;

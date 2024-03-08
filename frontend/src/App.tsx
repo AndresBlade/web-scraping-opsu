@@ -36,8 +36,9 @@ function App() {
 						checked: false,
 				  }
 		),
-		managementType: null,
+		managementType: '3',
 	});
+	console.log(managementType);
 
 	const [clickedUniversity, setClickedUniversity] =
 		useState<null | University>(null);
