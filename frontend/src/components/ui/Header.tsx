@@ -37,7 +37,10 @@ export const Header = ({
 								setClickedUniversity(null);
 								setClickedLocation(null);
 							}}
-							onChange={onInputChange}
+							onChange={e => {
+								e.target.value = e.target.value.toUpperCase();
+								onInputChange(e);
+							}}
 							className="search-bar__input"
 						/>
 					</li>
