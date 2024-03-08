@@ -70,6 +70,8 @@ img {
 .header {
 	background-color: var(--primaryColor);
 	height: 7.5rem;
+	position: relative;
+	z-index: 1000;
 }
 
 .header__ul {
