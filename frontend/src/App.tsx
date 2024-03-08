@@ -23,11 +23,19 @@ function App() {
 	} = useForm<SearchForm>({
 		searchOption: 'Universidad',
 		searchName: '',
-		states: jsonStates.map(state => ({
-			value: state.id,
-			content: state.name,
-			checked: false,
-		})),
+		states: jsonStates.map(state =>
+			state.name === 'Lara'
+				? {
+						value: state.id,
+						content: state.name,
+						checked: true,
+				  }
+				: {
+						value: state.id,
+						content: state.name,
+						checked: false,
+				  }
+		),
 		managementType: null,
 	});
 

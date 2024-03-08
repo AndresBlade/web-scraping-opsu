@@ -28,10 +28,7 @@ const Sidebar = ({
 						{jsonManagementTypes.map((management, index) => {
 							const htmlID = `${management.name}Checkbox`;
 							return (
-								<div
-									className="sidebar__list-li"
-									key={index}
-								>
+								<div className="sidebar__list-li" key={index}>
 									<input
 										type="radio"
 										name="managementType"
@@ -64,10 +61,7 @@ const Sidebar = ({
 							// Code to render each estado item
 							const htmlID = `${state.content}Checkbox`;
 							return (
-								<div
-									className="sidebar__list-li"
-									key={index}
-								>
+								<div className="sidebar__list-li" key={index}>
 									<input
 										onChange={onCheckboxChange}
 										className="sidebar__li-item"
@@ -77,6 +71,7 @@ const Sidebar = ({
 										title={state.content}
 										value={state.value}
 										checked={state.checked}
+										disabled
 									/>
 									<label htmlFor={htmlID}>
 										{state.content}
