@@ -199,6 +199,7 @@ h2 > span {
 .sidebar__flex {
 	display: flex;
 	align-items: center;
+	gap: 1rem;
 }
 .sidebar__hover {
 	overflow-y: scroll;
@@ -239,6 +240,11 @@ h2 > span {
 	.sidebar {
 		width: 30%;
 	}
+}
+
+.sidebar__state-list-img {
+	width: 64px;
+	filter: grayscale(1) invert() contrast(100);
 }
 
 /* University Page */

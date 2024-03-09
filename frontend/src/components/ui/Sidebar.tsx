@@ -1,4 +1,4 @@
-import statesPng from '../../assets/states.png';
+import venezuelaPng from '../../assets/venezuela-border.png';
 import managementPng from '../../assets/management.png';
 import jsonManagementTypes from '../../data/management.json';
 import { ChangeEvent } from 'react';
@@ -52,7 +52,11 @@ const Sidebar = ({
 			</div>
 			<div className="sidebar__hover sidebar__hover-vh">
 				<div className="sidebar__flex">
-					<img src={statesPng} alt="estados" />
+					<img
+						src={venezuelaPng}
+						alt="estados"
+						className="sidebar__state-list-img"
+					/>
 					<h2>Estados</h2>
 				</div>
 				<ul className="principal">
