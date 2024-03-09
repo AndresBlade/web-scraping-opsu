@@ -74,7 +74,9 @@ const Universities = ({
 							<div className="universities-card__info">
 								<h2>
 									<span>Nombre de la universidad:</span>{' '}
-									{university.name}
+									{university.name
+										.replace(/\(GESTIÓN PÚBLICA\)/gi, '')
+										.replace(/\(GESTIÓN PRIVADA\)/gi, '')}
 								</h2>
 								<h2>
 									<span>Tipo de gestion:</span>{' '}

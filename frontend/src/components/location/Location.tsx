@@ -38,7 +38,9 @@ export const LocationPage = ({
 							setClickedUniversity(university);
 						}}
 					>
-						{university.name}
+						{university.name
+							.replace(/\(GESTIÓN PÚBLICA\)/gi, '')
+							.replace(/\(GESTIÓN PRIVADA\)/gi, '')}
 					</span>
 				</p>
 				{location.career.length ? (
