@@ -33,6 +33,7 @@ export const Header = ({
 							id="name"
 							placeholder={`Nombre de la universidad, localidad, carrera...`}
 							value={searchName}
+							autoComplete="off"
 							onFocus={() => {
 								setClickedUniversity(null);
 								setClickedLocation(null);
