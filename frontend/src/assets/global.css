@@ -165,6 +165,7 @@ img {
 }
 .universities-card__image_png {
 	width: 150px;
+	object-fit: contain;
 }
 .universities-card__info {
 	padding: 1rem;

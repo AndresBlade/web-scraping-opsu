@@ -66,7 +66,7 @@ const Universities = ({
 						>
 							<div className="universities-card__image">
 								<img
-									src={univeristyPNG}
+									src={university.image_path ?? univeristyPNG}
 									alt="university "
 									className="universities-card__image_png"
 								/>

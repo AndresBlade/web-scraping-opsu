@@ -19,6 +19,7 @@ model university {
   name       String                 @db.VarChar(200)
   link       String                 @db.VarChar(80)
   management university_management?
+  image_path String?                @db.Text
   location   location[]
 }
 
