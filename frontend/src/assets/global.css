@@ -371,6 +371,15 @@ h2 > span {
 }
 
 .career {
+	line-height: 1.5;
+	overflow: hidden;
+}
+
+.career:nth-child(2n) {
+	background-color: #e5e5e5;
+}
+
+.career__general-info {
 	display: flex;
 	height: auto;
 	align-items: center;
@@ -379,11 +388,34 @@ h2 > span {
 	justify-content: space-between;
 }
 
-.career > * {
+.career__general-info > * {
 	flex: 1 1 0;
 	text-align: center;
 }
 
-.career:nth-child(2n) {
-	background-color: #e5e5e5;
+.graduate-profile {
+	max-height: 0;
+	opacity: 0;
+	transition: all 0.5s linear;
+	padding: 0 2rem;
 }
+
+.career:hover .graduate-profile {
+	max-height: 50rem;
+	opacity: 1;
+}
+
+/* @keyframes show-graduate-profile {
+	0% {
+		display: none;
+		height: 0;
+		opacity: 0;
+	}
+	50% {
+	}
+	100% {
+		display: block;
+		height: auto;
+		opacity: 1;
+	}
+} */

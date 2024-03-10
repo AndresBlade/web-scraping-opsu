@@ -1,6 +1,7 @@
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import { Location } from '../../interfaces/Location';
 import { University } from '../../interfaces/University';
+import { CareerRow } from '../careers/CareerRow';
 
 interface LocationProps {
 	university: University;
@@ -69,28 +70,7 @@ export const LocationPage = ({
 						<p className="careers__title-header">Título</p>
 					</div>
 					{location.career.map((career, index) => (
-						<div className="career" key={index}>
-							<p className="career__name">{career.name}</p>
-
-							{+career.referential_index.index === 0 ? (
-								<p className="career__no-index">
-									No disponible
-								</p>
-							) : (
-								<div className="career__index-container">
-									<span className="career__index-year">
-										{career.referential_index.index}
-									</span>
-									{' en el año '}
-									<span className="career__index-value">
-										{career.referential_index.year}
-									</span>
-								</div>
-							)}
-							<p className="career__title">
-								{career.title || 'No disponible'}
-							</p>
-						</div>
+						<CareerRow career={career} key={index} />
 					))}
 				</div>
 			)}
