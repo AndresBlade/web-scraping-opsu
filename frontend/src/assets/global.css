@@ -274,6 +274,10 @@ h2 > span {
 	border-radius: 2rem;
 }
 
+.university__logo {
+	height: 200px;
+}
+
 .university__locations {
 	display: grid;
 	width: 100%;

@@ -6,4 +6,5 @@ export interface University {
 	link: string;
 	management: string;
 	location: Location[];
+	image_path: string;
 }

@@ -27,6 +27,11 @@ export const UniversityPage = ({
 					.replace(/\(GESTIÓN PRIVADA\)/gi, '')
 					.replace(/PRIVADA/gi, '')}
 			</a>
+			<img
+				src={university.image_path}
+				alt={`logo de ${university.name}`}
+				className="university__logo"
+			/>
 			<div className="university__locations">
 				{university.location.map((location, index) => (
 					<div
