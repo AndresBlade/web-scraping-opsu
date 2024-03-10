@@ -76,7 +76,8 @@ const Universities = ({
 									<span>Nombre de la universidad:</span>{' '}
 									{university.name
 										.replace(/\(GESTIÓN PÚBLICA\)/gi, '')
-										.replace(/\(GESTIÓN PRIVADA\)/gi, '')}
+										.replace(/\(GESTIÓN PRIVADA\)/gi, '')
+										.replace(/PRIVADA/gi, '')}
 								</h2>
 								<h2>
 									<span>Tipo de gestion:</span>{' '}

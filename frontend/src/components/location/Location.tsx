@@ -41,7 +41,8 @@ export const LocationPage = ({
 					>
 						{university.name
 							.replace(/\(GESTIÓN PÚBLICA\)/gi, '')
-							.replace(/\(GESTIÓN PRIVADA\)/gi, '')}
+							.replace(/\(GESTIÓN PRIVADA\)/gi, '')
+							.replace(/PRIVADA/gi, '')}
 					</span>
 				</p>
 				{location.career.length ? (

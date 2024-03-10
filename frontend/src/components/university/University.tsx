@@ -24,7 +24,8 @@ export const UniversityPage = ({
 			<a className="university__name" href={university.link}>
 				{university.name
 					.replace(/\(GESTIÓN PÚBLICA\)/gi, '')
-					.replace(/\(GESTIÓN PRIVADA\)/gi, '')}
+					.replace(/\(GESTIÓN PRIVADA\)/gi, '')
+					.replace(/PRIVADA/gi, '')}
 			</a>
 			<div className="university__locations">
 				{university.location.map((location, index) => (
