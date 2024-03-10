@@ -4,7 +4,7 @@
 		"name": "UNIVERSIDAD PRIVADA FERMÍN TORO (GESTIÓN PRIVADA)",
 		"link": "https://loeu.opsu.gob.ve/detalle-ieu/1062/",
 		"management": "PRIVADA",
-		"image_path": "src/assets/universities-images/fermin-toro.gif",
+		"image_path": "./universities-images/fermin-toro.gif",
 		"location": [
 			{
 				"id": 87,
@@ -152,7 +152,7 @@
 		"name": "INSTITUTO UNIVERSITARIO DE TECNOLOGÍA INDUSTRIAL RODOLFO LOERO ARISMENDI (GESTIÓN PRIVADA)",
 		"link": "https://loeu.opsu.gob.ve/detalle-ieu/1145/",
 		"management": "PRIVADA",
-		"image_path": "src/assets/universities-images/iutirla.png",
+		"image_path": "./universities-images/iutirla.png",
 		"location": [
 			{
 				"id": 88,
@@ -326,7 +326,7 @@
 		"name": "INSTITUTO UNIVERSITARIO JESÚS OBRERO (GESTIÓN PRIVADA)",
 		"link": "https://loeu.opsu.gob.ve/detalle-ieu/1187/",
 		"management": "PRIVADA",
-		"image_path": "src/assets/universities-images/IUJO.gif",
+		"image_path": "./universities-images/IUJO.gif",
 		"location": [
 			{
 				"id": 89,
@@ -448,7 +448,7 @@
 		"name": "COLEGIO UNIVERSITARIO FERMÍN TORO (GESTIÓN PRIVADA)",
 		"link": "https://loeu.opsu.gob.ve/detalle-ieu/1072/",
 		"management": "PRIVADA",
-		"image_path": "src/assets/universities-images/colegio-fermin-toro.gif",
+		"image_path": "./universities-images/colegio-fermin-toro.gif",
 		"location": [
 			{
 				"id": 90,
@@ -557,7 +557,7 @@
 		"name": "INSTITUTO UNIVERSITARIO DE TECNOLOGÍA ANTONIO JOSÉ DE SUCRE (GESTIÓN PRIVADA)",
 		"link": "https://loeu.opsu.gob.ve/detalle-ieu/1144/",
 		"management": "PRIVADA",
-		"image_path": "src/assets/universities-images/antonio-jose-sucre.png",
+		"image_path": "./universities-images/antonio-jose-sucre.png",
 		"location": [
 			{
 				"id": 91,
@@ -796,7 +796,7 @@
 		"name": "UNIVERSIDAD PRIVADA YACAMBÚ (GESTIÓN PRIVADA)",
 		"link": "https://loeu.opsu.gob.ve/detalle-ieu/1063/",
 		"management": "PRIVADA",
-		"image_path": "src/assets/universities-images/universidad-yacambu.png",
+		"image_path": "./universities-images/universidad-yacambu.png",
 		"location": [
 			{
 				"id": 92,
@@ -931,7 +931,7 @@
 		"name": "INSTITUTO UNIVERSITARIO DE TECNOLOGÍA MARIO BRICEÑO IRAGORRY (GESTIÓN PRIVADA)",
 		"link": "https://loeu.opsu.gob.ve/detalle-ieu/1228/",
 		"management": "PRIVADA",
-		"image_path": "src/assets/universities-images/iutembi.png",
+		"image_path": "./universities-images/iutembi.png",
 		"location": [
 			{
 				"id": 93,
@@ -1053,7 +1053,7 @@
 		"name": "UNIVERSIDAD CENTRO OCCIDENTAL LISANDRO ALVARADO (GESTIÓN PÚBLICA)",
 		"link": "https://loeu.opsu.gob.ve/detalle-ieu/1037/",
 		"management": "PUBLICA",
-		"image_path": "src/assets/universities-images/ucla.jpg",
+		"image_path": "./universities-images/ucla.jpg",
 		"location": [
 			{
 				"id": 94,
@@ -1375,7 +1375,7 @@
 		"name": "UNIVERSIDAD POPULAR DEL AMBIENTE FRUTO VIVAS (GESTIÓN PÚBLICA)",
 		"link": "https://loeu.opsu.gob.ve/detalle-ieu/1765/",
 		"management": "PUBLICA",
-		"image_path": "src/assets/universities-images/fruto-vivas.jpg",
+		"image_path": "./universities-images/fruto-vivas.jpg",
 		"location": [
 			{
 				"id": 97,
@@ -1432,7 +1432,7 @@
 		"name": "UNIVERSIDAD CENTRAL DE VENEZUELA (GESTIÓN PÚBLICA)",
 		"link": "https://loeu.opsu.gob.ve/detalle-ieu/1106/",
 		"management": "PUBLICA",
-		"image_path": "src/assets/universities-images/ucv.png",
+		"image_path": "./universities-images/ucv.png",
 		"location": [
 			{
 				"id": 98,
@@ -1498,7 +1498,7 @@
 		"name": "UNIVERSIDAD DE LAS CIENCIAS DE LA SALUD 'HUGO CHÁVEZ FRÍAS' (GESTIÓN PÚBLICA)",
 		"link": "https://loeu.opsu.gob.ve/detalle-ieu/1754/",
 		"management": "PUBLICA",
-		"image_path": "src/assets/universities-images/Logo_de_la_Universidad_Ciencias_de_la_Salud.png",
+		"image_path": "./universities-images/Logo_de_la_Universidad_Ciencias_de_la_Salud.png",
 		"location": [
 			{
 				"id": 100,
@@ -1581,7 +1581,7 @@
 		"name": "UNIVERSIDAD NACIONAL EXPERIMENTAL POLITÉCNICA DE LA FUERZA ARMADA NACIONAL (GESTIÓN PÚBLICA)",
 		"link": "https://loeu.opsu.gob.ve/detalle-ieu/1129/",
 		"management": "PUBLICA",
-		"image_path": "src/assets/universities-images/unefa.svg",
+		"image_path": "./universities-images/unefa.svg",
 		"location": [
 			{
 				"id": 101,
@@ -1703,7 +1703,7 @@
 		"name": "UNIVERSIDAD CAMPESINA DE VENEZUELA 'ALGIMIRO GABALDON' (GESTIÓN PÚBLICA)",
 		"link": "https://loeu.opsu.gob.ve/detalle-ieu/1762/",
 		"management": "PUBLICA",
-		"image_path": "src/assets/universities-images/algimiro-gabaldon.png",
+		"image_path": "./universities-images/algimiro-gabaldon.png",
 		"location": [
 			{
 				"id": 102,
@@ -1760,7 +1760,7 @@
 		"name": "UNIVERSIDAD NACIONAL EXPERIMENTAL DEL MAGISTERIO 'SAMUEL ROBINSON' (GESTIÓN PÚBLICA)",
 		"link": "https://loeu.opsu.gob.ve/detalle-ieu/1766/",
 		"management": "PUBLICA",
-		"image_path": "src/assets/universities-images/samuel robinson.png",
+		"image_path": "./universities-images/samuel robinson.png",
 		"location": [
 			{
 				"id": 103,
@@ -1986,7 +1986,7 @@
 		"name": "UNIVERSIDAD NACIONAL EXPERIMENTAL FRANCISCO DE MIRANDA (GESTIÓN PÚBLICA)",
 		"link": "https://loeu.opsu.gob.ve/detalle-ieu/1043/",
 		"management": "PUBLICA",
-		"image_path": "src/assets/universities-images/unefm.png",
+		"image_path": "./universities-images/unefm.png",
 		"location": [
 			{
 				"id": 104,
@@ -2069,7 +2069,7 @@
 		"name": "UNIVERSIDAD POLITÉCNICA TERRITORIAL DEL ESTADO LARA 'ANDRES ELOY BLANCO' (GESTIÓN PÚBLICA)",
 		"link": "https://loeu.opsu.gob.ve/detalle-ieu/1528/",
 		"management": "PUBLICA",
-		"image_path": "src/assets/universities-images/uptaeb.webp",
+		"image_path": "./universities-images/uptaeb.webp",
 		"location": [
 			{
 				"id": 105,
@@ -2230,7 +2230,7 @@
 		"name": "UNIVERSIDAD NACIONAL ABIERTA (GESTIÓN PÚBLICA)",
 		"link": "https://loeu.opsu.gob.ve/detalle-ieu/1116/",
 		"management": "PUBLICA",
-		"image_path": "src/assets/universities-images/una.png",
+		"image_path": "./universities-images/una.png",
 		"location": [
 			{
 				"id": 106,
@@ -2543,7 +2543,7 @@
 		"name": "UNIVERSIDAD PEDAGÓGICA EXPERIMENTAL LIBERTADOR (GESTIÓN PÚBLICA)",
 		"link": "https://loeu.opsu.gob.ve/detalle-ieu/1122/",
 		"management": "PUBLICA",
-		"image_path": "src/assets/universities-images/upel.png",
+		"image_path": "./universities-images/upel.png",
 		"location": [
 			{
 				"id": 108,
@@ -2795,7 +2795,7 @@
 		"name": "UNIVERSIDAD NACIONAL EXPERIMENTAL POLITÉCNICA ANTONIO JOSÉ DE SUCRE (GESTIÓN PÚBLICA)",
 		"link": "https://loeu.opsu.gob.ve/detalle-ieu/1058/",
 		"management": "PUBLICA",
-		"image_path": "src/assets/universities-images/unexpo.png",
+		"image_path": "./universities-images/unexpo.png",
 		"location": [
 			{
 				"id": 109,
@@ -2952,7 +2952,7 @@
 		"name": "UNIVERSIDAD NACIONAL EXPERIMENTAL SIMÓN RODRÍGUEZ (GESTIÓN PÚBLICA)",
 		"link": "https://loeu.opsu.gob.ve/detalle-ieu/1109/",
 		"management": "PUBLICA",
-		"image_path": "src/assets/universities-images/unesr.png",
+		"image_path": "./universities-images/unesr.png",
 		"location": [
 			{
 				"id": 111,
@@ -3113,7 +3113,7 @@
 		"name": "UNIVERSIDAD NACIONAL EXPERIMENTAL DE LARA 'MARTIN LUTHER KING' (GESTIÓN PÚBLICA)",
 		"link": "https://loeu.opsu.gob.ve/detalle-ieu/1734/",
 		"management": "PUBLICA",
-		"image_path": "src/assets/universities-images/martin-luther-king.png",
+		"image_path": "./universities-images/martin-luther-king.png",
 		"location": [
 			{
 				"id": 112,
