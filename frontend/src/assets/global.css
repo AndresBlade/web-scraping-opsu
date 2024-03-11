@@ -335,6 +335,7 @@ h2 > span {
 .location__name {
 	text-align: center;
 	font-size: 2rem;
+	font-weight: 100;
 	color: #0061ff;
 }
 

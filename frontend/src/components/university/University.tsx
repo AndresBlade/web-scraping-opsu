@@ -21,12 +21,12 @@ export const UniversityPage = ({
 }: UniversityProps) => {
 	return (
 		<div className="university">
-			<a className="university__name" href={university.link}>
+			<h1 className="university__name">
 				{university.name
 					.replace(/\(GESTIÓN PÚBLICA\)/gi, '')
 					.replace(/\(GESTIÓN PRIVADA\)/gi, '')
 					.replace(/PRIVADA/gi, '')}
-			</a>
+			</h1>
 			<img
 				src={university.image_path}
 				alt={`logo de ${university.name}`}

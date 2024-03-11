@@ -1,4 +1,3 @@
-import { FaExternalLinkAlt } from 'react-icons/fa';
 import { Location } from '../../interfaces/Location';
 import { University } from '../../interfaces/University';
 import { CareerRow } from '../careers/CareerRow';
@@ -25,10 +24,7 @@ export const LocationPage = ({
 }: LocationProps) => {
 	return (
 		<div className="location universities-container">
-			<a className="location__name" href={location.link}>
-				{location.name}{' '}
-				<FaExternalLinkAlt className="location__external-link-icon" />
-			</a>
+			<h1 className="location__name">{location.name.trim()}</h1>
 			<div className="location__general-info">
 				<p className="location__university">
 					<span className="bold">Perteneciente a: </span>
